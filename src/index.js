@@ -1,45 +1,48 @@
-const fetchPostsBtn = document.querySelector(".btn");
-const userList = document.querySelector(".posts");
-const form = document.querySelector(".form");
-const input = document.querySelector(".input");
+const signature = [1, 1, 1];
+const n = 10;
 
-fetchPostsBtn.addEventListener("click", () => {
-    fetchPosts()
-    .then((posts) => renderPosts(posts))
-    .catch((error) => console.log(error));
-});
-
-
-
-function inputValue (e) {
-    console.log(e.target.value);
-    return e.target.value;
-}
-
-console.log(inputValue());
-function fetchPosts() {
-// Change the number of items in the group here  
-    input.addEventListener("input", inputValue);
-    return fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${input.value}`).then(
-    (response) => {
-        if (!response.ok) {
-        throw new Error(response.status);
-        }
-        return response.json();
+function tribonacci(signature,n){  
+    for (let i = 0; i < n; i += 1) { // iterate n times
+      signature.push(signature[i] + signature[i+1] + signature[i+2]); // add last 3 array items and push to trib
     }
-    );
+    return signature.slice(0, n); 
+
 }
 
-function renderPosts(posts) {
-    const markup = posts
-    .map(({ id, title, body, userId }) => {
-        return `<li>
-            <h2 class="post-title">${title.slice(0, 30)}</h2>
-            <p><b>Post id</b>: ${id}</p>
-            <p><b>Author id</b>: ${userId}</p>
-            <p class="post-body">${body}</p>
-        </li>`;
-    })
-    .join("");
-    userList.innerHTML = markup;
-}
+// i = 0
+
+//     1                1              1  
+// signature[i] + signature[i+1] + signature[i+2]
+
+// signature = [1, 1, 1, 3] 
+
+
+
+// i = 1
+
+    //      1                1              3
+    // signature[i] + signature[i+1] + signature[i+2]
+
+    // signature = [1, 1, 1, 3, 5]
+
+// i = 2
+    //      1                3              5
+    // signature[i] + signature[i+1] + signature[i+2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(tribonacci(signature,n));

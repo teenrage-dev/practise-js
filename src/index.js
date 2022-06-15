@@ -1,13 +1,13 @@
-const signature = [1, 1, 1];
-const n = 10;
+// const signature = [1, 1, 1];
+// const n = 10;
 
-function tribonacci(signature,n){  
-    for (let i = 0; i < n; i += 1) { // iterate n times
-      signature.push(signature[i] + signature[i+1] + signature[i+2]); // add last 3 array items and push to trib
-    }
-    return signature.slice(0, n); 
+// function tribonacci(signature,n){  
+//     for (let i = 0; i < n; i += 1) { // iterate n times
+//       signature.push(signature[i] + signature[i+1] + signature[i+2]); // add last 3 array items and push to trib
+//     }
+//     return signature.slice(0, n); 
 
-}
+// }
 
 // i = 0
 
@@ -30,19 +30,17 @@ function tribonacci(signature,n){
     // signature[i] + signature[i+1] + signature[i+2]
 
 
+// console.log(tribonacci(signature,n));
 
 
 
 
 
+// Unique characters in a string
+
+// function findUniq(arr) {
+//     return +arr.filter( (value) =>  arr.indexOf(value) == arr.lastIndexOf(value));
+// }
 
 
-
-
-
-
-
-
-
-
-console.log(tribonacci(signature,n));
+// console.log(findUniq([1, 1, 1, 1, 1, 1, 1, 1, 10]));
